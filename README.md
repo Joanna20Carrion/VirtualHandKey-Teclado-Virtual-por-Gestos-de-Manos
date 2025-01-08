@@ -1,71 +1,91 @@
-# Virtual Keyboard with Hand Gesture Recognition
+# Teclado Virtual con Mediapipe y OpenCV
 
-This project implements a virtual keyboard that detects hand gestures using a webcam and converts them into letters based on predefined gesture mappings. The program uses **OpenCV** for image processing and **MediaPipe** for hand tracking.
+Este proyecto implementa un "teclado virtual" que utiliza la biblioteca Mediapipe para el reconocimiento de manos y OpenCV para la visualización en tiempo real. Se detectan gestos específicos basados en el número de dedos levantados en ambas manos y se asignan a letras del abecedario.
 
-## Features
-- **Real-time hand gesture detection**: Recognizes the number of fingers raised on each hand.
-- **Text generation**: Converts gestures into corresponding letters and appends them to a text.
-- **Save detected text**: Outputs the detected text to a file named `detected_text.txt`.
-- **On-screen display**: Shows the real-time detected letter and the full text on the video feed.
+## Características
 
-## Gesture Mapping
-Each combination of fingers raised on the left and right hands corresponds to a specific letter:
+- Detecta el número de dedos levantados en cada mano.
+- Asigna letras a combinaciones específicas de dedos levantados en ambas manos.
+- Guarda el texto detectado en tiempo real y en un archivo `detected_text.txt`.
+- Actualiza el texto detectado cada 3 segundos para evitar detecciones repetidas.
+- Muestra el texto en tiempo real y el texto completo en pantalla.
 
-| Left Hand Fingers | Right Hand Fingers | Letter |
-|-------------------|--------------------|--------|
-| 1                 | 0                  | A      |
-| 2                 | 0                  | B      |
-| 3                 | 0                  | C      |
-| 4                 | 0                  | D      |
-| 0                 | 1                  | E      |
-| 0                 | 2                  | F      |
-| ...               | ...                | ...    |
-| 5                 | 0                  | Z      |
+## Requisitos
 
-## Requirements
-To run this project, you need:
+Antes de ejecutar este proyecto, asegúrate de tener instaladas las siguientes dependencias:
 
-- Python 3.7 or higher
+- Python 3.7 o superior
 - OpenCV
-- MediaPipe
+- Mediapipe
 
-## Installation
-1. Clone this repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd <project-directory>
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install opencv-python mediapipe
-   ```
+Puedes instalarlas utilizando pip:
 
-## Usage
-1. Run the script:
-   ```bash
-   python <script-name>.py
-   ```
-2. Allow access to your webcam.
-3. Perform gestures with your hands to see the corresponding letters displayed on the screen.
-4. The detected text will be saved in `detected_text.txt`.
-5. Press `ESC` to exit the program.
+```bash
+pip install opencv-python mediapipe
+```
 
-## Files
-- `script.py`: The main script for hand gesture detection and text generation.
-- `detected_text.txt`: The output file where the detected text is stored.
+## Uso
 
-## Future Improvements
-- Add support for more gestures.
-- Improve robustness under varying lighting conditions.
-- Implement multi-language gesture support.
+1. Clona este repositorio o descarga los archivos.
+2. Asegúrate de que tu cámara esté conectada y funcionando correctamente.
+3. Ejecuta el script principal:
 
-## Acknowledgments
-- [OpenCV](https://opencv.org/) for image processing.
-- [MediaPipe](https://mediapipe.dev/) for hand tracking.
+```bash
+python teclado_virtual.py
+```
 
----
+4. Usa tus manos frente a la cámara para formar los gestos especificados. Las letras se guardarán automáticamente en el archivo `detected_text.txt` y se mostrarán en tiempo real en la pantalla.
 
-Feel free to contribute or suggest improvements!
+## Gestos Reconocidos
+
+El programa detecta combinaciones de dedos levantados en ambas manos y las asigna a letras según el siguiente diccionario:
+
+```python
+{
+    (1, 0): "A",
+    (2, 0): "B",
+    (3, 0): "C",
+    (4, 0): "D",
+    (0, 1): "E",
+    (0, 2): "F",
+    (0, 3): "G",
+    (0, 4): "H",
+    (1, 1): "I",
+    (1, 2): "J",
+    (1, 3): "K",
+    (1, 4): "L",
+    (2, 1): "M",
+    (2, 2): "N",
+    (2, 3): "O",
+    (2, 4): "P",
+    (3, 1): "Q",
+    (3, 2): "R",
+    (3, 3): "S",
+    (3, 4): "T",
+    (4, 1): "U",
+    (4, 2): "V",
+    (4, 3): "W",
+    (4, 4): "X",
+    (0, 0): "Y",
+    (5, 0): "Z",
+}
+```
+
+## Archivo de Salida
+
+El texto detectado se guarda en un archivo llamado `detected_text.txt`, que se genera automáticamente al iniciar el programa. Puedes abrir este archivo para ver el texto completo detectado durante la sesión.
+
+## Notas
+
+- El script está diseñado para funcionar con una cámara web conectada a tu computadora.
+- Asegúrate de tener buena iluminación para un mejor reconocimiento de las manos.
+- Usa gestos claros y mantén las manos dentro del encuadre de la cámara.
+
+## Controles
+
+- Presiona `ESC` para salir del programa.
+
+## Autor
+
+Este proyecto fue desarrollado para explorar el reconocimiento de gestos utilizando Mediapipe y OpenCV.
+

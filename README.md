@@ -55,8 +55,11 @@ Para más detalles, consulta el archivo fuente `teclado_virtual.py`.
 - El script está configurado para un intervalo de 3 segundos entre detecciones del mismo gesto.
 - El texto final se guarda en un archivo llamado `detected_text.txt` en el mismo directorio.
 
-## Contribuciones
-¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, no dudes en enviar un pull request o abrir un issue.
+## Autor
+**Joanna Alexandra Carrión Pérez**: Bachiller de Ingeniería Electrónica. Apasionada por la Ciencia de Datos y la Inteligencia Artificial. [LinkedIn](https://www.linkedin.com/in/joanna-carrion-perez/)
 
----
-¡Gracias por usar este proyecto! 😊
+## Contacto
+Para cualquier duda o sugerencia, contáctame a través de **joannacarrion14@gmail.com**.
+
+## Contribuciones
+¡Contribuciones son bienvenidas! Si tienes ideas o mejoras, no dudes en hacer un fork del repositorio y enviar un pull request.

@@ -1,91 +1,61 @@
-# Teclado Virtual con Mediapipe y OpenCV
+# Teclado Virtual de Detección de Gestos
 
-Este proyecto implementa un "teclado virtual" que utiliza la biblioteca Mediapipe para el reconocimiento de manos y OpenCV para la visualización en tiempo real. Se detectan gestos específicos basados en el número de dedos levantados en ambas manos y se asignan a letras del abecedario.
+Este proyecto utiliza OpenCV y MediaPipe para crear un teclado virtual que detecta gestos realizados con las manos y los traduce a texto. El texto detectado se guarda en un archivo de texto y se muestra en tiempo real en la pantalla.
 
-## Características
-
-- Detecta el número de dedos levantados en cada mano.
-- Asigna letras a combinaciones específicas de dedos levantados en ambas manos.
-- Guarda el texto detectado en tiempo real y en un archivo `detected_text.txt`.
-- Actualiza el texto detectado cada 3 segundos para evitar detecciones repetidas.
-- Muestra el texto en tiempo real y el texto completo en pantalla.
+## Características principales
+- Detección de gestos de manos utilizando MediaPipe.
+- Traducción de combinaciones de dedos levantados en ambas manos a letras específicas.
+- Visualización en tiempo real de los gestos detectados.
+- Almacenamiento del texto detectado en un archivo de texto.
 
 ## Requisitos
-
-Antes de ejecutar este proyecto, asegúrate de tener instaladas las siguientes dependencias:
-
 - Python 3.7 o superior
-- OpenCV
-- Mediapipe
+- Cámara web
 
-Puedes instalarlas utilizando pip:
-
-```bash
-pip install opencv-python mediapipe
-```
+## Instalación
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/teclado-virtual-gestos.git
+   cd teclado-virtual-gestos
+   ```
+2. Instala las dependencias necesarias:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Uso
-
-1. Clona este repositorio o descarga los archivos.
-2. Asegúrate de que tu cámara esté conectada y funcionando correctamente.
-3. Ejecuta el script principal:
-
+Ejecuta el script principal:
 ```bash
 python teclado_virtual.py
 ```
 
-4. Usa tus manos frente a la cámara para formar los gestos especificados. Las letras se guardarán automáticamente en el archivo `detected_text.txt` y se mostrarán en tiempo real en la pantalla.
+Presiona `ESC` para salir de la aplicación.
 
-## Gestos Reconocidos
+## Biblioteca utilizada
+| Biblioteca  | Versión | Descripción                                        |
+|-------------|---------|----------------------------------------------------|
+| OpenCV      | 4.x     | Para capturar imágenes desde la cámara y procesarlas. |
+| MediaPipe   | Última  | Para la detección y seguimiento de manos.         |
+| Time        | Nativa  | Para controlar los intervalos entre detecciones.  |
 
-El programa detecta combinaciones de dedos levantados en ambas manos y las asigna a letras según el siguiente diccionario:
+## Mapeo de gestos
+El proyecto utiliza combinaciones de dedos levantados en ambas manos para representar letras. Estas combinaciones están definidas en el diccionario `gestures` del código. Por ejemplo:
 
-```python
-{
-    (1, 0): "A",
-    (2, 0): "B",
-    (3, 0): "C",
-    (4, 0): "D",
-    (0, 1): "E",
-    (0, 2): "F",
-    (0, 3): "G",
-    (0, 4): "H",
-    (1, 1): "I",
-    (1, 2): "J",
-    (1, 3): "K",
-    (1, 4): "L",
-    (2, 1): "M",
-    (2, 2): "N",
-    (2, 3): "O",
-    (2, 4): "P",
-    (3, 1): "Q",
-    (3, 2): "R",
-    (3, 3): "S",
-    (3, 4): "T",
-    (4, 1): "U",
-    (4, 2): "V",
-    (4, 3): "W",
-    (4, 4): "X",
-    (0, 0): "Y",
-    (5, 0): "Z",
-}
-```
+| Dedos mano izquierda | Dedos mano derecha | Letra |
+|-----------------------|--------------------|-------|
+| 1                     | 0                  | A     |
+| 2                     | 0                  | B     |
+| 0                     | 1                  | E     |
+| ...                   | ...                | ...   |
 
-## Archivo de Salida
-
-El texto detectado se guarda en un archivo llamado `detected_text.txt`, que se genera automáticamente al iniciar el programa. Puedes abrir este archivo para ver el texto completo detectado durante la sesión.
+Para más detalles, consulta el archivo fuente `teclado_virtual.py`.
 
 ## Notas
+- El script está configurado para un intervalo de 3 segundos entre detecciones del mismo gesto.
+- El texto final se guarda en un archivo llamado `detected_text.txt` en el mismo directorio.
 
-- El script está diseñado para funcionar con una cámara web conectada a tu computadora.
-- Asegúrate de tener buena iluminación para un mejor reconocimiento de las manos.
-- Usa gestos claros y mantén las manos dentro del encuadre de la cámara.
+## Contribuciones
+¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, no dudes en enviar un pull request o abrir un issue.
 
-## Controles
-
-- Presiona `ESC` para salir del programa.
-
-## Autor
-
-Este proyecto fue desarrollado para explorar el reconocimiento de gestos utilizando Mediapipe y OpenCV.
-
+---
+¡Gracias por usar este proyecto! 😊

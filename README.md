@@ -15,12 +15,13 @@ Este proyecto utiliza OpenCV y MediaPipe para crear un teclado virtual que detec
 ## Instalación
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tuusuario/teclado-virtual-gestos.git
-   cd teclado-virtual-gestos
+   gh repo clone Joanna20Carrion/VirtualHandKey-Teclado-Virtual-por-Gestos-de-Manos
    ```
 2. Instala las dependencias necesarias:
    ```bash
-   pip install -r requirements.txt
+   pip install opencv-python
+   pip install mediapipe
+
    ```
 
 ## Uso

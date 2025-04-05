@@ -1,5 +1,11 @@
 # Teclado Virtual de Detección de Gestos
 
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Tracking-orange)
+![RealTime](https://img.shields.io/badge/RealTime-Gesture%20Detection-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 Este proyecto utiliza OpenCV y MediaPipe para crear un teclado virtual que detecta gestos realizados con las manos y los traduce a texto. El texto detectado se guarda en un archivo de texto y se muestra en tiempo real en la pantalla.
 
 ## Características principales
@@ -9,8 +15,8 @@ Este proyecto utiliza OpenCV y MediaPipe para crear un teclado virtual que detec
 - Almacenamiento del texto detectado en un archivo de texto.
 
 ## Requisitos
-- Python 3.7 o superior
-- Cámara web
+![Python](https://img.shields.io/badge/Requiere-Python%203.7%2B-blue)
+![Webcam](https://img.shields.io/badge/Requiere-Cámara_Web-important)
 
 ## Instalación
 1. Clona este repositorio:
@@ -56,7 +62,10 @@ Para más detalles, consulta el archivo fuente `teclado_virtual.py`.
 - El texto final se guarda en un archivo llamado `detected_text.txt` en el mismo directorio.
 
 ## Autor
-**Joanna Alexandra Carrión Pérez**: Bachiller de Ingeniería Electrónica. Apasionada por la Ciencia de Datos y la Inteligencia Artificial. [LinkedIn](https://www.linkedin.com/in/joanna-carrion-perez/)
+**Joanna Alexandra Carrión Pérez**  
+🎓 Bachiller en Ingeniería Electrónica  
+💡 Apasionada por la Ciencia de Datos y la Inteligencia Artificial  
+🔗 ![LinkedIn](https://img.shields.io/badge/LinkedIn-Joanna%20Carrión%20Pérez-blue?style=flat&logo=linkedin) [LinkedIn](https://www.linkedin.com/in/joanna-carrion-perez/)
 
 ## Contacto
 Para cualquier duda o sugerencia, contáctame a través de **joannacarrion14@gmail.com**.
